@@ -8,16 +8,16 @@
 
 <body>
     <h1>Control de Satélite</h1>
-    <!-- Interfaz limpia con el botón requerido -->
+    <!-- Botón satélite -->
     <button id="btnLanzar">Lanzar Ventana Satélite</button>
 
     <script>
-        // Criterio c y h: Código estructurado y uso de objetos screen para centrado dinámico
+        // Ancho y alto de la ventana
         document.getElementById("btnLanzar").addEventListener("click", function () {
             const ancho = 400;
             const alto = 300;
 
-            // Cálculo dinámico utilizando el objeto screen excluyendo la barra de tareas
+            // Centrar ventana
             const left = (screen.availWidth / 2) - (ancho / 2);
             const top = (screen.availHeight / 2) - (alto / 2);
 

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ventana Satélite</title>
+</head>
+
+<body>
+    <h2>Panel de Control del Satélite</h2>
+
+    <!-- Mensaje de bienvenida -->
+    <div id="bienvenida"></div>
+
+    <br>
+    <!-- Botones de redirección -->
+    <button id="btnHistorial">Redirigir con Historial</button>
+    <button id="btnSinHistorial">Redirigir sin Historial</button>
+
+    <br><br>
+    <!-- Botón de autodestrucción y cuenta atrás -->
+    <button id="btnAutodestruct">Autodestrucción en 5 segundos</button>
+    <p id="mensaje-destruccion"></p>
+
+    <script>
+        // Detección del sistema operativo
+        const ua = navigator.userAgent;
+        let sistema = "Desconocido";
+
+        if (ua.includes("Windows")) {
+            sistema = "Windows";
+        } else if (ua.includes("Mac")) {
+            sistema = "Mac";
+        } else if (ua.includes("Linux")) {
+            sistema = "Linux";
+        }
+
+        // Mostrar mensaje en el HTML
+        document.getElementById("bienvenida").innerHTML = `<p>¡Bienvenido! Sistema operativo detectado: <strong>${sistema}</strong></p>`;
+
+        // Redirigir guardando historial
+        document.getElementById("btnHistorial").addEventListener("click", function () {
+            if (window.opener && !window.opener.closed) {
+                window.opener.location.assign("https://www.ilerna.es");
+            }
+        });
+
+        // Redirigir sin guardar historial
+        document.getElementById("btnSinHistorial").addEventListener("click", function () {
+            if (window.opener && !window.opener.closed) {
+                window.opener.location.replace("https://www.ilerna.es");
+            }
+        });
+
+        // Temporizador de autodestrucción
+        document.getElementById("btnAutodestruct").addEventListener("click", function () {
+            const boton = this;
+            boton.disabled = true;
+            const mensaje = document.getElementById("mensaje-destruccion");
+
+            let cuentaAtras = 5;
+            mensaje.textContent = cuentaAtras;
+
+            // Cuenta atrás cada segundo
+            const intervalo = setInterval(function () {
+                cuentaAtras--;
+                if (cuentaAtras > 0) {
+                    mensaje.textContent = cuentaAtras;
+                } else {
+                    clearInterval(intervalo);
+                }
+            }, 1000);
+
+            // Cerrar la ventana tras 5 segundos
+            setTimeout(function () {
+                window.close();
+            }, 5000);
+        });
+    </script>
+</body>
+
+</html>
