@@ -1,0 +1,28 @@
+body {
+    font-family: system-ui, sans-serif;
+    text-align: center;
+    padding: 15px;
+    background-color: #fafbfc;
+    color: #333;
+}
+
+button {
+    margin: 4px;
+    padding: 8px 12px;
+    font-size: 13px;
+    cursor: pointer;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #e9ecef;
+}
+
+#mensaje-destruccion {
+    font-size: 22px;
+    font-weight: bold;
+    color: #dc3545;
+}
+
