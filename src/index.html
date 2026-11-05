@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ventana Principal - Madre</title>
+</head>
+
+<body>
+    <h1>Control de Satélite</h1>
+    <!-- Interfaz limpia con el botón requerido -->
+    <button id="btnLanzar">Lanzar Ventana Satélite</button>
+
+    <script>
+        // Criterio c y h: Código estructurado y uso de objetos screen para centrado dinámico
+        document.getElementById("btnLanzar").addEventListener("click", function () {
+            const ancho = 400;
+            const alto = 300;
+
+            // Cálculo dinámico utilizando el objeto screen excluyendo la barra de tareas
+            const left = (screen.availWidth / 2) - (ancho / 2);
+            const top = (screen.availHeight / 2) - (alto / 2);
+
+            // Apertura de ventana secundaria mediante window.open() con dimensiones fijas
+            window.open(
+                "satelite.html",
+                "ventanaSatelite",
+                `width=${ancho},height=${alto},left=${left},top=${top},toolbar=no,scrollbars=yes`
+            );
+        });
+    </script>
+</body>
+
+</html>
