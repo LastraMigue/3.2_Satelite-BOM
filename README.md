@@ -52,6 +52,6 @@ En dicho documento se explican:
 
 Puedes acceder y probar la aplicación en vivo a través de GitHub Pages:
 
-**[Ver Proyecto en GitHub Pages](https://lastramigue.github.io/3.2_Satelite-BOM/src/index.html)**
+**[Ver Proyecto en GitHub Pages](https://lastramigue.github.io/3.2_Satelite-BOM/)**
 
-> **URL directa:** `https://lastramigue.github.io/3.2_Satelite-BOM/src/index.html`
+> **URL directa:** `https://lastramigue.github.io/3.2_Satelite-BOM/`
