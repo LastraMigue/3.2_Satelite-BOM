@@ -48,7 +48,7 @@ En dicho documento se explican:
 
 ---
 
-## 🌐 Enlace del Proyecto
+## Enlace del Proyecto
 
 Puedes acceder y probar la aplicación en vivo a través de GitHub Pages:
 
